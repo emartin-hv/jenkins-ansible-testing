@@ -1,0 +1,16 @@
+---
+- name: Configure CloudBees Jenkins Master
+  hosts: cloudbees_servers
+  vars:
+   - jenkins_plugins: [ 'active-directory', 'blueocean', 'cloudbees-folder', 'git', 'github', 'gradle', 
+        'pipeline-github', 'pipeline-build-step', 'pipeline-github-lib', 'pipeline-graph-analysis', 'pipeline-input-step',
+        'pipeline-maven', 'pipeline-milestone-step', 'pipeline-model-api', 'pipeline-model-declarative-agent',
+        'pipeline-model-definition', 'pipeline-model-extensions', 'pipeline-rest-api', 'pipeline-stage-step', 'pipeline-stage-tags-metadata',
+        'pipeline-utility-steps', 'workflow-api', 'workflow-basic-steps', 'workflow-cps-global-lib', 'workflow-cps', 'workflow-durable-task-step', 'workflow-job',
+        'workflow-multibranch', 'workflow-scm-step', 'workflow-step-api', 'workflow-support',
+        'rebuild', 'ssh-slaves', 'timestamper', 'ws-cleanup' ]
+  become: true
+  roles:
+      - ossetup
+      - geerlingguy.jenkins
+

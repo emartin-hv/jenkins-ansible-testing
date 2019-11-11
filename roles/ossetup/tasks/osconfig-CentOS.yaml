@@ -1,0 +1,90 @@
+---
+  - name: soft core unlimited
+    pam_limits: 
+      domain: jenkins
+      limit_type: soft
+      limit_item: core
+      value: unlimited
+
+  - name: hard core unlimited
+    pam_limits: 
+      domain: jenkins
+      limit_type: hard
+      limit_item: core
+      value: unlimited
+
+  - name: soft fsize unlimited
+    pam_limits: 
+      domain: jenkins
+      limit_type: soft
+      limit_item: fsize
+      value: unlimited
+
+  - name: hard fsize unlimited
+    pam_limits: 
+      domain: jenkins
+      limit_type: hard
+      limit_item: fsize
+      value: unlimited
+
+  - name: soft nofile 8192
+    pam_limits: 
+      domain: jenkins
+      limit_type: hard
+      limit_item: nofile
+      value: '8192'
+
+  - name: hard nofile 8192
+    pam_limits: 
+      domain: jenkins
+      limit_type: hard
+      limit_item: nofile
+      value: '8192'
+
+  - name: soft nproc 30654
+    pam_limits: 
+      domain: jenkins
+      limit_type: soft
+      limit_item: nproc
+      value: '30654'
+
+  - name: hard nproc 30654
+    pam_limits: 
+      domain: jenkins
+      limit_type: hard
+      limit_item: nproc
+      value: '30654'
+
+  - name: soft locks unlimited
+    pam_limits: 
+      domain: jenkins
+      limit_type: soft
+      limit_item: locks
+      value: unlimited
+
+  - name: hard locks unlimited
+    pam_limits: 
+      domain: jenkins
+      limit_type: hard
+      limit_item: locks
+      value: unlimited
+
+  - name: soft memlock unlimited
+    pam_limits: 
+      domain: jenkins
+      limit_type: soft
+      limit_item: memlock
+      value: unlimited
+
+  - name: hard memlock unlimited
+    pam_limits: 
+      domain: jenkins
+      limit_type: hard
+      limit_item: memlock
+      value: unlimited
+
+  - name: Set VM swappiness
+    sysctl:
+      name: vm.swappiness
+      value: '15'
+      state: present
